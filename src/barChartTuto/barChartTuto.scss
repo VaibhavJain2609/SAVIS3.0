@@ -1,0 +1,64 @@
+---
+---
+
+#bar-chart-tutorial {
+  form {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  h4 {
+    margin-top: 3px;
+  }
+  .chart-area {
+    display: flex;
+    //flex-wrap: wrap;
+    #control {
+      width: 10%;
+    }
+    #view {
+      width: 60%;
+      justify-content: center;
+    }
+    #result{
+      text-align: center;
+      width: 25%;
+      justify-content: center;
+      align-content: center;
+      margin: auto;
+      table{
+        font-size: 14px;
+        border-spacing: 0;
+        border-radius: 5px;
+        margin: auto;
+        width: 90%;
+      }
+      th, td{
+        padding: 5px;
+        border: 1px solid #000;
+      }
+    }
+    label {
+      display: block;
+      font-size: 12px;
+    }
+  }
+  .right-num {
+    text-align: right;
+    // float: right;
+  }
+  .btn{
+    width: 100%;
+  }
+  .text-display{
+    text-align: center;
+  }
+  textarea{
+    width: 100%;
+    border-radius: 5px;
+  }
+  select{
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+  }
+}

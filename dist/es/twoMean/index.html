@@ -1,0 +1,209 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" content="application/javascript">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SAVIS | Dos Medias Prueba de hipótesis
+</title>
+    <link rel="stylesheet" href="./../css/base.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+    <nav id="navbar">
+      <h1 class="logo"><a href="./../../" class="text-primary">SAVIS</a></h1>
+      <ul>
+        <li><a href="./../index.html">Inicio
+</a></li>
+        
+        <li><a href="./../about/index.html">Acerca de SAVIS
+</a></li>
+
+        <li><a href="https://www.csus.edu/faculty/d/rdiaz/">Bajar Archivo
+</a></li>
+
+
+        <li><a href="https://www.csus.edu/faculty/d/rdiaz/">Manual del Usuario
+</a></li>
+
+        
+      </ul>
+    </nav>
+    <div id="main-content"><link rel="stylesheet" href="./twoMean.css">
+<div id="two-mean">
+  <h1>Dos Medias Prueba de hipótesis
+</h1>
+  <h2>1. Teclee los Datos
+</h2>
+  <input type="checkbox" style="float:right"/ checked>
+  <div class="section">
+    <div class="lhs">
+      <div class="lhs">
+        <select id="sample-select">
+          <option disabled selected>Seleccione Datos Muestra
+</option>
+          <!-- TODO(matthewmerrill): translate this -->
+          <option value="sample1">Sample 1</option>
+          <option value="sample2">Sample 2</option>
+        </select>
+        <textarea id="csv-input" placeholder="Teclee datos o arrastre aquí archivo csv: primera columa para codigo de grupos (1 o 2), segunda colunmna para la variable (sin títulos de columna - ver datos muestra en el menu de arriba)
+"></textarea>
+        <button onclick="twoMean.loadData()" class="btn">Cargar Datos
+</button>
+        <button onclick="twoMean.reset()" style = "margin-top:5px"class="btn">Reinicio
+</button>
+        <button class = "btn" id = "upload-btn" style = "margin-top: 5px"> Subir archivo de datos
+</button>
+        <input type = "file" id = "fileInput"  style  = "display: none;">
+      </div>
+      <div id="data-summary" class="stats">
+        <div>
+          <span>Tamaño n (Grupo 1):
+ </span>
+          <span summary="size1"></span>
+
+        </div>
+        <div>
+          <span>Media 1 (Grupo 1):
+</span>
+          <span summary="dataMean1"></span>
+        </div>
+        <div>
+          <span>Tamaño n (Grupo 2):
+ </span>
+          <span summary="size2"></span>
+
+        </div>
+        <div>
+          <span>Media 2 (Grupo 2):
+</span>
+          <span summary="dataMean2"></span>
+        </div>
+        <div>
+          <span>Diferencia entre Medias (Media 1 - Media 2):
+</span>
+          <span summary="dataMeanDiff"></span>
+        </div>
+      </div>
+    </div>
+    <div class="rhs">
+      <div class="chart-wrap"><canvas id="data-chart-1"></canvas></div>
+      <div class="chart-wrap"><canvas id="data-chart-2"></canvas></div>
+    </div>
+  </div>
+  <h2>2. Correr Simulaciones
+</h2>
+  <input type="checkbox" style="float:right"/ checked>
+  <div class="section">
+    <div class="lhs">
+      <h3># de Simulaciones
+</h3>
+      <input id="num-simulations" type="number" value="1" min="1" max="100" disabled="need-data" />
+      <button onclick="twoMean.runSim()" onclick="" class="btn" disabled="need-data">Correr Simulacón
+</button>
+      <div class="stats">
+        <div>
+          <span>Media de la Muestra Randomizada al Grupo 1:
+</span>
+          <span summary="sampleMean1">NaN
+</span>
+        </div>
+        <div>
+          <span>Media de la Muestra Randomizada al Grupo 2:
+</span>
+          <span summary="sampleMean2">NaN
+</span>
+        </div>
+        <div>
+          <span>Differencia entre medias (de muestras aleatorizadas):
+</span>
+          <span summary="sampleMeanDiff">NaN
+</span>
+        </div>
+      </div>
+    </div>
+    <div class="rhs">
+      <h3>Ultima Muestra
+</h3>
+      <div class="chart-wrap"><canvas id="sample-chart-1"></canvas></div>
+      <div class="chart-wrap"><canvas id="sample-chart-2"></canvas></div>
+    </div>
+  </div>
+  <h2>3. Distribución de diferencias de medias
+</h2>
+  <input type="checkbox" style="float:right"/ checked>
+  <div id="two-mean-diff" class="section">
+    <div class="lhs">
+      <select id="tail-direction" disabled="need-results">
+        <option value="null" disabled selected>Tipo de Prueba
+</option>
+<option value="oneTailRight">Una cola (derecha)
+</option>
+<option value="oneTailLeft">Una cola (izquierda)
+</option>
+<option value="TwoTail">Dos colas
+</option>
+
+      </select>
+      <span>Seleccionar las diferencias iguales a o más extremas que:
+</span><input type="number" id="tail-input" value="0" step="any" disabled="need-results">
+      <hr>
+      <div class="stats">
+        <div>
+          <span>Diferencia de Medias en Datos Originales:
+</span>
+          <span summary="dataMeanDiff">NaN
+</span>
+        </div>
+        <div>
+          <span>Media de las Diferencias:
+</span>
+          <span summary="mean">NaN
+</span>
+        </div>
+        <div>
+          <span>Desviación Estándar:
+</span>
+          <span summary="stddev">NaN
+</span>
+        </div>
+        <br>
+        <div>
+          <span>Total # de muestras:
+</span>
+          <span summary="total" summaryint>NaN
+</span>
+        </div>
+        <div>
+          <span># de Diferencias Extremas:
+</span>
+          <span summary="chosen" summaryint>NaN
+</span>
+        </div>
+        <div>
+          <span>Proporción de Diferencias Extremas:
+</span>
+          <span summary="proportion">NaN
+</span>
+        </div>
+      </div>
+    </div>
+    <div class="rhs">
+      <div class="chart-wrap"><canvas id="diff-chart"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<script src="../lib/Chart.bundle.min.js"></script>
+
+<script src="./twoMeanEntry.js" type="module"></script>
+
+
+</div>
+    <footer id="main-footer" class="bg-dark text-center py-1">
+      <div class="container">
+        <p>Copyright ©2019  CSUS. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

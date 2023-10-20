@@ -1,0 +1,17 @@
+#one-proportion p {
+  margin-top: 0;
+  margin-bottom: 0; }
+#one-proportion h4 {
+  margin-top: 3px; }
+#one-proportion .chart-input-form {
+  display: flex; }
+  #one-proportion .chart-input-form #control {
+    width: 100ch; }
+  #one-proportion .chart-input-form label {
+    display: block;
+    font-size: 12px; }
+#one-proportion table {
+  margin: auto;
+  font-size: 12px; }
+#one-proportion .right-num {
+  text-align: right; }

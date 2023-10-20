@@ -1,0 +1,239 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" content="application/javascript">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SAVIS | Intervalo de confianza de dos medios
+</title>
+    <link rel="stylesheet" href="./../css/base.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+    <nav id="navbar">
+      <h1 class="logo"><a href="./../../" class="text-primary">SAVIS</a></h1>
+      <ul>
+        <li><a href="./../index.html">Inicio
+</a></li>
+        
+        <li><a href="./../about/index.html">Acerca de SAVIS
+</a></li>
+
+        <li><a href="https://www.csus.edu/faculty/d/rdiaz/">Bajar Archivo
+</a></li>
+
+
+        <li><a href="https://www.csus.edu/faculty/d/rdiaz/">Manual del Usuario
+</a></li>
+
+        
+      </ul>
+    </nav>
+    <div id="main-content"><link rel="stylesheet" href="./twoMean.css">
+<div id="two-mean">
+  <h1>Intervalo de confianza de dos medios
+</h1>
+  <h2>1. Teclee los Datos
+</h2>
+  <input type="checkbox" style="float:right" checked>
+  <div class="section">
+    <div class="lhs">
+      <div class="lhs">
+        <select id="sample-select">
+          <option disabled selected>Seleccione Datos Muestra
+</option>
+          
+        </select>
+        <textarea id="csv-input" placeholder="Teclee datos o arrastre aquí archivo csv: primera columa para codigo de grupos (1 o 2), segunda colunmna para la variable (sin títulos de columna - ver datos muestra en el menu de arriba)
+"></textarea>
+        <button id = "load-btn" class="btn">Cargar Datos
+</button>
+        <button style= "margin-top: 5px" onclick="twoMean.reset()" class="btn">Reinicio
+</button>
+        <button class = "btn" id = "upload-btn" style = "margin-top: 5px"> Subir archivo de datos
+</button>
+        <input type = "file" id = "fileInput"  style  = "display: none;">
+      </div>
+      <div id="data-summary" class="stats">
+        <div>
+          <span id = "size1">Tamaño n (Grupo 1):
+ </span>
+          <br>
+        </div>
+        <div>
+          <span id = "dataMean1">Media 1 (Grupo 1):
+ </span>
+          <br>
+        </div>
+        <div>
+          <span id = "dataSD1">Desviación Estándar (Grupo 1):
+</span>
+          <br>
+        </div>
+        <div>
+          <span id = "size2">Tamaño n (Grupo 2):
+ </span>
+          <br>
+        </div>
+        <div>
+          <span id = "dataMean2">Media 2 (Grupo 2):
+</span>
+          <br>
+        </div>
+        <div>
+          <span id = "dataSD2">Desviación Estándar (Grupo 2):
+</span>
+          <br>
+        </div>
+        <div>
+          <span id = "dataMeanDiff">Diferencia entre Medias (Media 1 - Media 2):
+</span>
+          <br>
+        </div>
+      </div>
+    </div>
+    <div class="rhs">
+      <div class="chart-wrap"><canvas id="data-chart-1"></canvas></div>
+      <div style = "width: 30%; margin: auto">
+          <label for = "multiply-group1" style = "font-size: 13px"> Aumentar en (Grupo 1)
+</label>
+          <input type = "number" step = "1" min = "10" value = "10" id = "multiply-group1" style = "width: 20%; text-align: center"/>
+      </div>
+      <div style = "width: 10%; margin: auto">
+        <button class = "incrementButton" ><span class="material-icons">add_circle</span></button>
+      </div>
+      <div class="chart-wrap"><canvas id="data-chart-2"></canvas></div>
+        <div style = "width: 30%; margin: auto">
+          <label for = "multiply-group2" style = "font-size: 13px"> Aumentar en (Grupo 2)
+</label>
+          <input type = "number" step = "1" min = "10" value = "10" id = "multiply-group2" style = "width: 20%; text-align: center"/>
+      </div>
+      <div style = "width: 10%; margin: auto">
+        <button class = "incrementButton" ><span class="material-icons">add_circle</span></button>
+      </div>
+    </div>
+  </div>
+  <h2>2. Correr Simulaciones
+</h2>
+  <input type="checkbox" style="float:right"/ checked>
+  <div class="section">
+    <div class="lhs">
+      <h3># de Simulaciones
+</h3>
+      <input id="num-simulations" type="number" value="1" min="1" max="100" disabled />
+      <button class="btn" id = "runSimButton" disabled>Correr Simulacón
+</button>
+      <div class="stats">
+        <div>
+          <span id = "sampleMean1">Media de la Muestra Randomizada al Grupo 1:
+</span>
+          <br>
+        </div>
+        <div>
+          <span id = "sampleSD1">Desviación Estándar de la Muestra Randomizada al Grupo 1:
+</span>
+          <br>
+
+        </div>
+
+        <div>
+          <span id = "sampleMean2"> Media de la Muestra Randomizada al Grupo 2:
+</span>
+          <br>
+
+        </div>
+        <div>
+          <span id = "sampleSD2">Desviación Estándar de la Muestra Randomizada al Grupo 2:
+</span>
+          <br>
+
+        </div>
+        <div>
+          <span id = "sampleMeanDiff">Differencia entre medias (de muestras aleatorizadas):
+</span>
+          <br>
+
+        </div>
+      </div>
+    </div>
+    <div class="rhs">
+      <h3>Ultima Muestra
+</h3>
+      <div class="chart-wrap"><canvas id="sample-chart-1"></canvas></div>
+      <div class="chart-wrap"><canvas id="sample-chart-2"></canvas></div>
+    </div>
+  </div>
+  <h2>3. Distribución de diferencias de medias
+</h2>
+  <input type="checkbox" style="float:right"/ checked>
+  <div id="two-mean-diff" class="section">
+
+    <div class="lhs">
+      <div>
+      <label for="confidence-level"> Nivel de confianza
+<span id="confidence-level-display">95</span
+        >%</label>
+      </div>
+      <input type="range"  style = "width: 50%" min="1" max="100" step="1" id="confidence-level" value="95"/>
+      <button type = "button"  class = "btn" style = "width:50%" id = "buildci"> Construir
+ </button>
+      <br>
+      <div class="stats">
+        
+
+
+  
+
+        <div>
+          <span>Diferencia de Medias en Datos Originales:
+</span>
+          <span id ="originalDiff"></span>
+        </div>
+        <div>
+          <span>Media de las Diferencias:
+</span>
+          <span id ="mean"></span>
+        </div>
+        <div>
+          <span>Desviación Estándar:
+</span>
+          <span id ="stddev"></span>
+        </div>
+        <div>
+          <span>Límite inferior
+</span>
+          <span id ="lower"></span>
+        </div>
+        <div>
+          <span>Límite superior
+</span>
+          <span id ="upper"></span>
+        </div>
+        <div>
+          <span>Total # de muestras:
+</span>
+          <span id ="total"></span>
+        </div>
+
+        
+      </div>
+    </div>
+    <div class="rhs">
+      <div ><canvas id="diff-chart" style = "height: 300px"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<script src="../lib/Chart.bundle.min.js"></script>
+
+<script src="./twoMeanEntry.js" type="module"></script>
+
+
+</div>
+    <footer id="main-footer" class="bg-dark text-center py-1">
+      <div class="container">
+        <p>Copyright ©2019  CSUS. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

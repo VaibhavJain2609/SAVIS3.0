@@ -1,0 +1,34 @@
+#one-mean h3 {
+  margin-top: 1ch;
+  width: 100%; }
+  #one-mean h3 .toggle-box {
+    float: right; }
+#one-mean .chart-input-form {
+  display: flex; }
+  #one-mean .chart-input-form .data-form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 38ch;
+    padding: 5px;
+    margin-bottom: 10px;
+    text-align: justify; }
+    #one-mean .chart-input-form .data-form p {
+      margin-top: 1px;
+      margin-bottom: 1px; }
+    #one-mean .chart-input-form .data-form .right-num {
+      text-align: right;
+      float: right; }
+  #one-mean .chart-input-form #run-sim-error-msg {
+    color: red;
+    text-align: center; }
+  #one-mean .chart-input-form .chart-wrap {
+    flex: 8; }
+  #one-mean .chart-input-form label,
+  #one-mean .chart-input-form input[type="number"] {
+    display: inline-block; }
+#one-mean .btn {
+  margin-top: 1px;
+  margin-bottom: 1px; }
+#one-mean .hideDataSection {
+  display: none; }

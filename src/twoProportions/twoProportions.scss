@@ -1,0 +1,52 @@
+---
+---
+
+#two-proportions {
+  .section{
+    display: flex;
+    flex-wrap: wrap;
+    .lhs {
+      width: 30%;
+      margin: 5px 2% 0;
+      table {
+        border-spacing: 0;
+        width: 90%;
+        margin: auto;
+        input{
+          width: 90%;
+          padding: 0.4rem;
+          border-radius: 5px;
+          display: inline-block;
+        }
+      }
+      th, td{
+        padding: 5px;
+      }
+    }  
+    .rhs{
+      width: 65%;
+      margin: auto;
+    }
+  }
+  .chart-wrap {
+    width: 80%;
+    height: 256px;
+  }
+  p{
+    margin: 5px 0 0;
+  }
+  input{
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
+  .btn {
+    width: 80%;
+    margin: 5px auto;
+  }
+  label{
+    display: block;
+  }
+  .center-num {
+    text-align: center;
+  }
+}

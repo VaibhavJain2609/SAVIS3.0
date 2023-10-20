@@ -1,0 +1,100 @@
+---
+layout: default
+titlekey: dotChartTuto.title
+---
+
+<link rel="stylesheet" href="{{base}}./dotChartTuto.css">
+<div id="dot-chart-tutorial">
+  <h1> {% include translate.html key="dotChartTuto.title" %}</h1>
+  <h3 class = 'subtitle'>1. {% include translate.html key="dotChartTuto.enterData" %}<input type="checkbox" class='toggle-box' checked="checked"></h3>
+  <div class="chart-input-form">
+    <div class="data-form">
+      <select id="sample-data-options">
+      </select>
+      <textarea rows="8" id="csv-input" placeholder="{% include translate.html key="dotChartTuto.textAreaPlaceHolder" %}"></textarea>
+      <button class="btn" id="load-data-btn">{% include translate.html key="dotChartTuto.loadData" %}</button>
+      <button class="btn" id="reset-btn">{% include translate.html key="dotChartTuto.reset" %}</button>
+      <button class = "btn" id = "upload-btn"> {% include translate.html key="dotChartTuto.upload" %}</button>
+      <input type = "file" id = "fileInput"  style  = "display: none;">
+      <br>
+      <form>
+        <input type="radio" id="population-data-radio" name="setData" checked>
+        <label for="population">{% include translate.html key="dotChartTuto.populationData" %}</label>
+        <input type="radio" id="sample-data-radio" name="setData">
+        <label for="sample">{% include translate.html key="dotChartTuto.sampleData" %}</label>
+      </form>
+      
+    </div>
+    <div class="data-form">
+      <textarea rows="10" id="input-data-display" readonly></textarea>
+      <p>{% include translate.html key="dotChartTuto.mean" %} <i id="input-mean-description">&mu;</i>:</p>
+      <p class = 'center-num' id ="input-data-mean">{% include translate.html key="dotChartTuto.noData" %}</p>
+      <p>{% include translate.html key="dotChartTuto.std" %}<i id="input-std-description">&sigma;</i>:</p>
+      <p class = 'center-num' id="input-data-std" >{% include translate.html key="dotChartTuto.noData" %}</p>
+      <p>{% include translate.html key = "dotChartTuto.size" %}<i id="input-size-description">N</i>:</p>
+      <p class = 'center-num' id = 'input-data-size'>{% include translate.html key="dotChartTuto.noData" %}</p>
+    </div>
+    <div class="chart-wrap"><canvas id="input-data-chart"></canvas></div>
+  </div>
+  <br>
+  <hr>
+
+  <h3>2. {% include translate.html key="dotChartTuto.drawSample" %}<input type="checkbox" class='toggle-box' checked="checked"></h3>  
+  <div class="chart-input-form">
+    <div class="data-form">
+      <label for="sample-data-size"> {% include translate.html key="dotChartTuto.sampleSize" %}</label>
+      <input type="number" min="1" step="1" id="sample-data-size" disabled/>
+      <label for="no-of-sample"> {% include translate.html key="dotChartTuto.noOfSims" %}</label>
+      <input type="number" min="1" step="1" id="no-of-sample" disabled/>
+      <br>
+      <button class="btn" id="get-sample-btn" disabled>{% include translate.html key="dotChartTuto.runSim" %}</button>
+      <p id ="run-sim-error-msg"></p>
+    </div>
+    <div class="data-form">
+      <textarea rows="10" readonly id="sample-data-display"></textarea>
+      <p>{% include translate.html key="dotChartTuto.mean" %} <i>x&#772;</i>:</p>
+      <p class = "center-num" id ="sample-mean">{% include translate.html key="dotChartTuto.noData" %}</p>
+      <p>{% include translate.html key="dotChartTuto.std" %} <i>s</i>:</p>
+      <p class = "center-num" id ="drawsample-std">{% include translate.html key="dotChartTuto.noData" %}</p>
+    </div>
+    <div class="chart-wrap"><canvas id="sample-data-chart"></canvas></div>
+  </div>
+  <br>
+  <hr>
+  <h3>3. {% include translate.html key="dotChartTuto.chartTitle4" %}<input type="checkbox" class='toggle-box' checked="checked"></h3>
+  <div class="chart-input-form">
+    <div class="data-form">
+      <p>{% include translate.html key="dotChartTuto.descripInterval" %}</p>
+
+      <label for="min-tailValue">{% include translate.html key="dotChartTuto.setMin" %}</label>
+      <input type="number" id="min-interValue" step="0.1" disabled>
+      <label for="min-tailValue">{% include translate.html key="dotChartTuto.includeMin" %}<input type="checkbox" id="includeMin" disabled></label>
+      <br>
+      <label for="max-tailValue">{% include translate.html key="dotChartTuto.setMax" %}</label>
+      <input type="number" id="max-interValue" step="0.1" disabled>
+      <label for="min-tailValue">{% include translate.html key="dotChartTuto.includeMax" %}<input type="checkbox" id="includeMax" disabled></label>
+      <br>
+      <p>{% include translate.html key="dotChartTuto.proportionChosen" %}</p>
+      <p class = "center-num" id="chosen-sample-means">{% include translate.html key="dotChartTuto.noData" %}</p>
+      <p>{% include translate.html key="dotChartTuto.proportionUnchosen" %}</p>
+      <p class = "center-num"  id="unchosen-sample-means">{% include translate.html key="dotChartTuto.noData" %}</p>
+    </div>
+    <div class="data-form">
+      <textarea rows="10" readonly id="sample-means-display"></textarea>
+      <p>{% include translate.html key="dotChartTuto.meanOfsamplesMeans" %}</p>
+      <p class = "center-num" id ="sample-means-mean">{% include translate.html key="dotChartTuto.noData" %}</p>
+      <p>{% include translate.html key="dotChartTuto.stdError" %}</p>
+      <p class = "center-num" id ="sample-means-stdError">{% include translate.html key="dotChartTuto.noData" %}</p>
+      <p>{% include translate.html key="dotChartTuto.totalSamples" %}</p>
+      <p class="center-num" id="total-sample-means">{% include translate.html key="dotChartTuto.noData" %}</p>
+    </div>
+    <div class="chart-wrap"><canvas id="sample-means-chart"></canvas></div>
+  </div>
+</div>
+
+<script src="{{base}}../lib/Chart.bundle.min.js"></script>
+{% if jekyll.environment == 'development' %}
+<script src="./dotChartTutoEntry.js" type="module"></script>
+{% else %}
+<script src="./dotChartTuto.bundle.js"></script>
+{% endif %}

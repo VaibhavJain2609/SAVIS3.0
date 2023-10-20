@@ -1,0 +1,120 @@
+---
+layout: default
+titlekey: oneMean.title
+---
+
+<link rel="stylesheet" href="{{base}}./oneMean.css">
+<div id="one-mean">
+  <h1> {% include translate.html key="oneMean.title" %}</h1>
+  <h3 class = 'subtitle'>1. {% include translate.html key="oneMean.enterData" %}<input type="checkbox" class='toggle-box' checked="checked"></h3>
+  <div class="chart-input-form">
+    <div class="data-form">
+      <select id="sample-data">
+      </select>
+      <textarea rows="8" id="csv-input" placeholder="{% include translate.html key="oneMean.textAreaPlaceHolder" %}"></textarea>
+      <button class="btn" id="load-data-btn">{% include translate.html key="oneMean.loadData" %}</button>
+      <button class="btn" id="reset-btn">{% include translate.html key="oneMean.reset" %}</button>
+      <button class = "btn" id = "upload-btn"> {% include translate.html key="oneMean.upload" %}</button>
+      <input type = "file" id = "fileInput"  style  = "display: none;">
+      <br>
+    </div>
+    <div class="data-form">
+      <textarea rows="10" id="original-data-display" readonly></textarea>
+      <p>{% include translate.html key="oneMean.mean" %}<i>&mu;</i>:</p>
+      <p class = 'center-num' id ="original-mean">{% include translate.html key="oneMean.noData" %}</p>
+      <p>{% include translate.html key="oneMean.std" %}<i>&sigma;</i>:</p>
+      <p class = 'center-num' id="original-std" >{% include translate.html key="oneMean.noData" %}</p>
+      <p>{% include translate.html key = "oneMean.size" %}<i>N</i>:</p>
+      <p class = 'center-num' id = 'originalsize'>{% include translate.html key="oneMean.noData" %}</p>
+    </div>
+    <div class="chart-wrap"><canvas id="original-data-chart"></canvas></div>
+  </div>
+  <hr> 
+
+  <!--
+  <h3>2. {% include translate.html key="oneMean.chartTitle2" %}<input type="checkbox" class='toggle-box' disabled></h3>
+  <div class="chart-input-form">
+    <div class="data-form">
+      <label for="shiftMeanInput"> {% include translate.html key="oneMean.shiftMean" %}</label>
+      <input type="number" step="0.1" id="shiftMeanInput" value="0"/>
+      <label for="mul-factor">{% include translate.html key="oneMean.increaseData" %} <span id="mul-factor-display">0</span> {% include translate.html key="oneMean.times" %}</label>
+      <br>
+      <input type="range" min="0" max="50" step="1" id="mul-factor" value="1"/>
+    </div>  
+    <div class="data-form">
+      <textarea rows="10" readonly id="population-data-display"></textarea>
+      <p>{% include translate.html key="oneMean.mean" %}<i>&mu;</i>:</p>
+      <p class = 'center-num' id ="population-mean">{% include translate.html key="oneMean.noData" %}</p>
+      <p>{% include translate.html key="oneMean.std" %} <i>&sigma;</i>:</p>
+      <p class = 'center-num' id="population-std" >{% include translate.html key="oneMean.noData" %}</p>
+    </div>
+    <div class="chart-wrap"><canvas id="population-data-chart"></canvas></div>
+  </div>
+  <hr>-->
+
+  <!--h3>3. {% include translate.html key="oneMean.drawSample" %}<input type="checkbox" class='toggle-box' checked="checked"></h3-->  
+  <h3>2. {% include translate.html key="oneMean.simSection" %}<input type="checkbox" class='toggle-box' checked="checked"></h3>
+  <div class="chart-input-form">
+    <div class="data-form">
+      <label for="sample-size"> {% include translate.html key="oneMean.sampleSize" %}</label>
+      <input type="number" min="1" step="1" id="sample-size" value="10"/>
+      <label for="no-of-sample"> {% include translate.html key="oneMean.numOfSim" %}</label>
+      <input type="number" min="1" step="1" id="no-of-sample" value="1"/>
+      <br>
+      <button class="btn" id="run-sim-btn">{% include translate.html key="oneMean.runSim" %}</button>
+      <p id ="run-sim-error-msg"></p>
+    </div>
+    <div class="data-form">
+      <textarea rows="10" readonly id="most-recent-sample-display"></textarea>
+      <p>{% include translate.html key="oneMean.mean" %}<i>x&#772;</i>:</p>
+      <p class = 'center-num' id ="sample-mean">{% include translate.html key="oneMean.noData" %}</p>
+      <p>{% include translate.html key="oneMean.std" %}<i>s</i>:</p>
+      <p class="center-num" id="drawsample-std">{% include translate.html key="oneMean.noData" %}</p>
+    </div>
+    <div class="chart-wrap"><canvas id="sample-data-chart"></canvas></div>
+  </div>
+  <hr>
+
+  <!--h3>4. {% include translate.html key="oneMean.chartTitle4" %} <input type="checkbox" class='toggle-box' checked="checked"></h3-->
+  <h3>3. {% include translate.html key="oneMean.chartTitle4" %} <input type="checkbox" class='toggle-box' checked="checked"></h3>
+  <div class="chart-input-form">
+    <div class="data-form">
+      <!--label for="tailValue"> {% include translate.html key="oneMean.extremeSamples" %}</label>
+      <input type="number" id="tailValue"/>
+      <br-->
+      <p>{% include translate.html key="oneMean.descripInterval" %}</p>
+
+      <label for="min-tailValue">{% include translate.html key="oneMean.setMin" %}<!--input type="checkbox" id='min-MeanTab' class='toggle-box' checked="checked"--></label>
+      <input type="number" id="min-tailValue" value="0">
+      <label for="min-tailValue">{% include translate.html key="oneMean.includeMin" %}<input type="checkbox" id="includeMin"></label>
+      <br>
+
+      <label for="max-tailValue">{% include translate.html key="oneMean.setMax" %}<!--input type="checkbox" id='max-MeanTab' class='toggle-box' checked="checked"--></label>
+      <input type="number" id="max-tailValue" value="1">
+      <label for="min-tailValue">{% include translate.html key="oneMean.includeMax" %}<input type="checkbox" id="includeMax"></label>
+      <br>
+      <p>{% include translate.html key="oneMean.proportionChosen" %}</p>
+      <p class = "center-num" id="chosen-sample-means">{% include translate.html key="oneMean.noData" %}</p>
+      <p>{% include translate.html key="oneMean.proportionUnchosen" %}</p>
+      <p class = "center-num"  id="unchosen-sample-means">{% include translate.html key="oneMean.noData" %}</p>
+    </div>
+    <div class="data-form">
+      <textarea rows="10" readonly id="samples-mean-display"></textarea>
+      <p>{% include translate.html key="oneMean.meanOfsamplesMeans" %}</p>
+      <p class = "center-num" id ="samples-mean">{% include translate.html key="oneMean.noData" %}</p>
+      <p>{% include translate.html key="oneMean.stdOfMeans" %}</p>
+      <p class = "center-num" id ="samplemeans-std">{% include translate.html key="oneMean.noData" %}</p>
+      <p>{% include translate.html key="oneMean.totalSamples" %}</p>
+      <p class="center-num" id="total-samples">{% include translate.html key="oneMean.noData" %}</p>
+    </div>
+    <div class="chart-wrap"><canvas id="statistic-data-chart"></canvas></div>
+  </div>
+</div>
+
+<script src="{{base}}../lib/Chart.bundle.min.js"></script>
+{% if jekyll.environment == 'development' %}
+<script src="./oneMeanEntry.js" type="module"></script>
+{% else %}
+<script src="./oneMean.bundle.js"></script>
+{% endif %}
+

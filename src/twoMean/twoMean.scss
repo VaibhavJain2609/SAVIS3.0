@@ -1,0 +1,65 @@
+---
+---
+#two-mean {
+  .lhs{
+    width: 25%;
+  }
+  .rhs{
+    width: 70%;
+  }
+
+  #csv-input {
+    flex-grow: 1;
+    width: 80%;
+    margin: auto 1em;
+    border-radius: 5px;
+    height: 50%;
+    min-height: 8rem;
+    resize: vertical;
+  }
+
+  .stats div {
+    margin: 0 0.5em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .stat {
+      text-align: right;
+    }
+  }
+  input[type=number]{
+    width: 80%;
+    padding: 0.4rem;
+    border-radius: 5px;
+    margin: 2% 1em;
+  }
+  .view {
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+  .chart-wrap {
+    height: 15em;
+  }
+  p{
+    margin: 5px .5em 1px;
+  }
+  .btn {
+    width: 80%;
+    margin: 1% 1em;
+  }
+  select{
+    width: 80%;
+    padding: 0.4em;
+    margin: 2% 1em;
+    border-radius: 5px;
+  }
+  .center-num {
+    text-align: center;
+  }
+}
+
+#how-many-stddev {
+  font-weight: bold;
+}
+

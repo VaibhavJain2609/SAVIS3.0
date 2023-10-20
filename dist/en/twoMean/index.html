@@ -1,0 +1,209 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" content="application/javascript">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SAVIS | Two Means Hypothesis Testing
+</title>
+    <link rel="stylesheet" href="./../css/base.css"></link>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+    <nav id="navbar">
+      <h1 class="logo"><a href="./../../" class="text-primary">SAVIS</a></h1>
+      <ul>
+        <li><a href="./../index.html">Home
+</a></li>
+        
+        <li><a href="./../about/index.html">About
+</a></li>
+
+        <li><a href="https://www.csus.edu/faculty/d/rdiaz/">Download
+</a></li>
+
+
+        <li><a href="https://www.csus.edu/faculty/d/rdiaz/">User Manual
+</a></li>
+
+        
+      </ul>
+    </nav>
+    <div id="main-content"><link rel="stylesheet" href="./twoMean.css">
+<div id="two-mean">
+  <h1>Two Means Hypothesis Testing
+</h1>
+  <h2>1. Enter Data
+</h2>
+  <input type="checkbox" style="float:right"/ checked>
+  <div class="section">
+    <div class="lhs">
+      <div class="lhs">
+        <select id="sample-select">
+          <option disabled selected>Select Sample Data
+</option>
+          <!-- TODO(matthewmerrill): translate this -->
+          <option value="sample1">Sample 1</option>
+          <option value="sample2">Sample 2</option>
+        </select>
+        <textarea id="csv-input" placeholder="Enter or Drop CSV with first column as group number (1 or 2) and second column as variable. No colunm names (see sample data in drop down menu)
+"></textarea>
+        <button onclick="twoMean.loadData()" class="btn">Load Data
+</button>
+        <button onclick="twoMean.reset()" style = "margin-top:5px"class="btn">Reset
+</button>
+        <button class = "btn" id = "upload-btn" style = "margin-top: 5px"> Upload Data File
+</button>
+        <input type = "file" id = "fileInput"  style  = "display: none;">
+      </div>
+      <div id="data-summary" class="stats">
+        <div>
+          <span>Size n (Group 1):
+ </span>
+          <span summary="size1"></span>
+
+        </div>
+        <div>
+          <span>Mean 1 (Group 1):
+</span>
+          <span summary="dataMean1"></span>
+        </div>
+        <div>
+          <span>Size n (Group 2):
+ </span>
+          <span summary="size2"></span>
+
+        </div>
+        <div>
+          <span>Mean 2 (Group 2):
+</span>
+          <span summary="dataMean2"></span>
+        </div>
+        <div>
+          <span>Difference of Means (Mean 1 - Mean 2):
+</span>
+          <span summary="dataMeanDiff"></span>
+        </div>
+      </div>
+    </div>
+    <div class="rhs">
+      <div class="chart-wrap"><canvas id="data-chart-1"></canvas></div>
+      <div class="chart-wrap"><canvas id="data-chart-2"></canvas></div>
+    </div>
+  </div>
+  <h2>2. Run Simulations
+</h2>
+  <input type="checkbox" style="float:right"/ checked>
+  <div class="section">
+    <div class="lhs">
+      <h3># of Simulations
+</h3>
+      <input id="num-simulations" type="number" value="1" min="1" max="100" disabled="need-data" />
+      <button onclick="twoMean.runSim()" onclick="" class="btn" disabled="need-data">Run Simulation
+</button>
+      <div class="stats">
+        <div>
+          <span>Mean of Randomized Sample to Group 1:
+</span>
+          <span summary="sampleMean1">NaN
+</span>
+        </div>
+        <div>
+          <span>Mean of Randomized Sample to Group 2:
+</span>
+          <span summary="sampleMean2">NaN
+</span>
+        </div>
+        <div>
+          <span>Difference of Means (Randomized Samples):
+</span>
+          <span summary="sampleMeanDiff">NaN
+</span>
+        </div>
+      </div>
+    </div>
+    <div class="rhs">
+      <h3>Most Recent Draw
+</h3>
+      <div class="chart-wrap"><canvas id="sample-chart-1"></canvas></div>
+      <div class="chart-wrap"><canvas id="sample-chart-2"></canvas></div>
+    </div>
+  </div>
+  <h2>3. Sampling Distribution of Difference of Means
+</h2>
+  <input type="checkbox" style="float:right"/ checked>
+  <div id="two-mean-diff" class="section">
+    <div class="lhs">
+      <select id="tail-direction" disabled="need-results">
+        <option value="null" disabled selected>Type of Test
+</option>
+<option value="oneTailRight">One Tail Right
+</option>
+<option value="oneTailLeft">One Tail Left
+</option>
+<option value="TwoTail">Two Tails
+</option>
+
+      </select>
+      <span>Select differences at least as extreme as
+</span><input type="number" id="tail-input" value="0" step="any" disabled="need-results">
+      <hr>
+      <div class="stats">
+        <div>
+          <span>Original Dataset Difference of Means:
+</span>
+          <span summary="dataMeanDiff">NaN
+</span>
+        </div>
+        <div>
+          <span>Mean of Sample Differences:
+</span>
+          <span summary="mean">NaN
+</span>
+        </div>
+        <div>
+          <span>Standard Deviation:
+</span>
+          <span summary="stddev">NaN
+</span>
+        </div>
+        <br>
+        <div>
+          <span>Total # samples:
+</span>
+          <span summary="total" summaryint>NaN
+</span>
+        </div>
+        <div>
+          <span># of Extreme Differences:
+</span>
+          <span summary="chosen" summaryint>NaN
+</span>
+        </div>
+        <div>
+          <span>Proportion of Extreme Differences
+</span>
+          <span summary="proportion">NaN
+</span>
+        </div>
+      </div>
+    </div>
+    <div class="rhs">
+      <div class="chart-wrap"><canvas id="diff-chart"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<script src="../lib/Chart.bundle.min.js"></script>
+
+<script src="./twoMeanEntry.js" type="module"></script>
+
+
+</div>
+    <footer id="main-footer" class="bg-dark text-center py-1">
+      <div class="container">
+        <p>Copyright ©2019  CSUS. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

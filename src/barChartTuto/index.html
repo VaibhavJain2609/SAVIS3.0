@@ -1,0 +1,81 @@
+---
+layout: default
+titlekey: barChartTuto.title
+---
+
+<link rel="stylesheet" href="{{base}}./barChartTuto.css">
+<div id="bar-chart-tutorial">
+  <h1> {% include translate.html key="barChartTuto.title" %}</h1>
+  <div class="chart-area">
+    <div id="control" class="container">
+      <h3>1. {% include translate.html key="barChartTuto.inputDataTitle" %}</h3>
+      <form>
+        <div class="form-group">
+          <select id="sample-data-options"></select>
+        </div>
+        <div class="form-group">
+          <textarea rows="8" id="csv-input" placeholder="{% include translate.html key="barChartTuto.textAreaPlaceHolder" %}"></textarea>
+        </div>
+        <div class="form-group">
+          <button class="btn" id="load-data-btn">{% include translate.html key="barChartTuto.loadData" %}</button>
+        </div>
+        <div class="form-group">
+          <button class="btn" id="reset-btn">{% include translate.html key="barChartTuto.reset" %}</button>
+        </div>
+        <div class="form-group">
+        <button class = "btn" id = "upload-btn"> {% include translate.html key="barChartTuto.upload" %}</button>
+        </div>
+        <input type = "file" id = "fileInput"  style  = "display: none;">
+        <div class="form-group">
+          <p class="text-display" id="input-data-size-text">{% include translate.html key="barChartTuto.dataSize" %}<i>N</i>:
+            <span class="right-num" id="input-data-size-number">{% include translate.html key="barChartTuto.noData" %}</span>
+          </p>
+        </div>
+        <div class="form-group">
+          <p class="text-display" id="input-error-msg"></p>
+        </div>
+      </form>
+    </div>
+    <div id="view">
+      <div><canvas id="input-chart" class="container"></canvas></div>
+    </div>
+    <div id="result">
+      <h4 id="input-data-table"></h4>
+      <table id="input-data-display"></table>
+    </div>
+  </div>
+  <br>
+  <hr>
+  <div class="chart-area">
+    <div id="control" class="container">
+      <h3>2. {% include translate.html key="barChartTuto.sampleDataTitle" %}</h3>
+      <form>
+        <div class="form-group">
+          <label for="sample-size"> {% include translate.html key="barChartTuto.sampleSize" %}:</label>
+          <input type="number" min="1" step="1" id="sample-size" disabled/>
+        </div>
+        <div class="form-group">
+          <button class="btn" id="get-sample-btn" disabled>{% include translate.html key="barChartTuto.drawSample" %}</button>
+        </div>
+        <p id="sample-data-size-text">{% include translate.html key="barChartTuto.dataSize" %} <i>n</i>:
+          <span class="right-num" id="sample-data-size-number">{% include translate.html key="barChartTuto.noData" %}</span>
+        <p class="text-display" id="get-sample-error-msg"></p>
+        </p>
+      </form>
+    </div>
+    <div id="view">
+      <canvas id="sample-chart" class="container"></canvas>
+    </div>
+    <div id="result">
+      <h4 id="sample-data-table"></h4>
+      <table id="sample-data-display"></table>
+    </div>
+  </div>
+</div>
+
+<script src="{{base}}../lib/Chart.bundle.min.js"></script>
+{% if jekyll.environment == 'development' %}
+<script src="./barChartTutoEntry.js" type="module"></script>
+{% else %}
+<script src="./barChartTuto.bundle.js"></script>
+{% endif %}

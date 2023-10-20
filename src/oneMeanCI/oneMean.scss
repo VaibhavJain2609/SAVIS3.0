@@ -1,0 +1,77 @@
+---
+---
+
+#one-mean {
+  h3 {
+    margin-top: 1ch;
+    width: 100%;
+    .toggle-box {
+      float: right;
+    }
+  }
+  .chart-input-form {
+    display: flex;
+    // border-bottom: 3px green solid;
+    .data-form {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      width: 38ch;
+      padding: 5px;
+      margin-bottom: 10px;
+      //text-align: justify;
+      p {
+        margin-top: 1px;
+        margin-bottom: 1px;
+      }
+      .center-num {
+        text-align: center;
+        float: right;
+      }
+      table{
+        font-size: 12px;
+        border-spacing: 0;
+        border-radius: 2px;
+        margin: auto;
+        width: 90%;
+      }
+      th, td{
+        padding: 2px;
+        border: 1px solid #000;
+      }
+    }
+    #run-sim-error-msg {
+      color: red;
+      text-align: center;
+    }
+    .chart-wrap {
+      flex: 8;
+      padding: 5px
+    }
+    label {
+      margin-top: 1px;
+      margin-bottom: 1px;
+    }
+    input[type="number"] {
+      height: 25px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+  }
+  .btn {
+    margin-top: 1px;
+    margin-bottom: 1px;
+  }
+  .hideDataSection{
+    display: none
+  }
+  textarea{
+    margin: 2px;
+    border-radius: 5px;
+  }
+  select{
+    height: 25px;
+    margin: 2px;
+    border-radius: 5px;
+  }
+}

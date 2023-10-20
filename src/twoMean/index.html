@@ -1,0 +1,148 @@
+---
+layout: default
+titlekey: twoMean.title
+---
+<link rel="stylesheet" href="{{base}}./twoMean.css">
+<div id="two-mean">
+  <h1>{% include translate.html key="twoMean.title" %}</h1>
+  <h2>1. {% include translate.html key="twoMean.enterData" %}</h2>
+  <input type="checkbox" style="float:right"/ checked>
+  <div class="section">
+    <div class="lhs">
+      <div>
+        <select id="sample-select">
+          <option disabled selected>{% include translate.html key="twoMean.selectData" %}</option>
+          <!-- TODO(matthewmerrill): translate this -->
+          <option value="sample1">{% include translate.html key="twoMean.selectOpt1" %}</option>
+          <option value="sample2">{% include translate.html key="twoMean.selectOpt2" %}</option>
+        </select>
+        <textarea id="csv-input" placeholder="{% include translate.html key="twoMean.placeholder" %}"></textarea>
+        <button onclick="twoMean.loadData()" class="btn">{% include translate.html key="twoMean.loadData" %}</button>
+        <button onclick="twoMean.reset()" class="btn">{% include translate.html key="twoMean.reset" %}</button>
+        <button class = "btn" id = "upload-btn"> {% include translate.html key="twoMean.upload" %}</button>
+        <input type = "file" id = "fileInput"  style  = "display: none;">
+      </div>
+      <div id="data-summary" class="stats">
+        <div>
+          <p>{% include translate.html key="twoMean.size1" %} </p>
+          <p class="center-num" summary="size1"></p>
+
+        </div>
+        <div>
+          <p>{% include translate.html key="twoMean.gp1Mean" %}</p>
+          <p class="center-num" summary="dataMean1"></p>
+        </div>
+        <div>
+          <p>{% include translate.html key="twoMean.size2" %} </p>
+          <p class="center-num" summary="size2"></p>
+
+        </div>
+        <div>
+          <p>{% include translate.html key="twoMean.gp2Mean" %}</p>
+          <p class="center-num" summary="dataMean2"></p>
+        </div>
+        <div>
+          <p>{% include translate.html key="twoMean.diffOfMean" %}</p>
+          <p class="center-num" summary="dataMeanDiff"></p>
+        </div>
+      </div>
+    </div>
+    <div class="rhs">
+      <div class="chart-wrap"><canvas id="data-chart-1"></canvas></div>
+      <div class="chart-wrap"><canvas id="data-chart-2"></canvas></div>
+    </div>
+  </div>
+  <hr>
+  <h2>2. {% include translate.html key="twoMean.runSims" %}</h2>
+  <input type="checkbox" style="float:right" checked>
+  <div class="section">
+    <div class="lhs">
+      <h3>{% include translate.html key="twoMean.numSim" %}</h3>
+      <input id="num-simulations" type="number" value="1" min="1" max="100" disabled="need-data" />
+      <button onclick="twoMean.runSim()" onclick="" class="btn" disabled="need-data">{% include translate.html key="twoMean.runSim" %}</button>
+      <div class="stats">
+        <div>
+          <p>{% include translate.html key="twoMean.randomMean1" %}</p>
+          <p class="center-num" summary="sampleMean1">{% include translate.html key="twoMean.noData" %}</p>
+        </div>
+        <div>
+          <p>{% include translate.html key="twoMean.randomMean2" %}</p>
+          <p class="center-num" summary="sampleMean2">{% include translate.html key="twoMean.noData" %}</p>
+        </div>
+        <div>
+          <p>{% include translate.html key="twoMean.diffOfSampleMean" %}</p>
+          <p class="center-num" summary="sampleMeanDiff">{% include translate.html key="twoMean.noData" %}</p>
+        </div>
+      </div>
+    </div>
+    <div class="rhs">
+      <h3>{% include translate.html key="twoMean.mostRecentDraw" %}</h3>
+      <div class="chart-wrap"><canvas id="sample-chart-1"></canvas></div>
+      <div class="chart-wrap"><canvas id="sample-chart-2"></canvas></div>
+    </div>
+  </div>
+  <hr>
+  <h2>3. {% include translate.html key="twoMean.subTitle3" %}</h2>
+  <input type="checkbox" style="float:right;" checked>
+  <div id="two-mean-diff" class="section">
+    <div class="lhs">
+      <!--select id="tail-direction" disabled="need-results">
+        {% include tailChartDirectionOptions.html %}
+      </select>
+      <p>{% include translate.html key="twoMean.selectAllExtreme" %}</p>
+      <input type="number" id="tail-input" value="0" step="any" disabled="need-results">
+      <hr-->
+
+      <p>{% include translate.html key="oneMean.descripInterval" %}</p>
+
+      <label for="min-tailValue">{% include translate.html key="oneMean.setMin" %}</label>
+      <input type="number" id="min-tailValue" value="0" step="0.1" disabled="need-results">
+      <label for="min-tailValue">{% include translate.html key="oneMean.includeMin" %}<input type="checkbox" id="includeMin" disabled="need-results"></label>
+      <br>
+
+      <label for="max-tailValue">{% include translate.html key="oneMean.setMax" %}</label>
+      <input type="number" id="max-tailValue" value="1" step="0.1" disabled="need-results">
+      <label for="min-tailValue">{% include translate.html key="oneMean.includeMax" %}<input type="checkbox" id="includeMax" disabled="need-results"></label>
+      
+      <hr>
+      <div class="stats">
+        <div>
+          <p>{% include translate.html key="twoMean.oriDiffOfMean" %}</p>
+          <p class="center-num" summary="dataMeanDiff">{% include translate.html key="twoMean.noData" %}</p>
+        </div>
+        <div>
+          <p>{% include translate.html key="twoMean.meanSampleDiff" %}</p>
+          <p class="center-num" summary="mean">{% include translate.html key="twoMean.noData" %}</p>
+        </div>
+        <div>
+          <p>{% include translate.html key="twoMean.stdSampleDiff" %}</p>
+          <p class="center-num" summary="stddev">{% include translate.html key="twoMean.noData" %}</p>
+        </div>
+        <br>
+        <div>
+          <p>{% include translate.html key="twoMean.totalSamples" %}</p>
+          <p class="center-num" summary="total" summaryint>{% include translate.html key="twoMean.noData" %}</p>
+        </div>
+        <div>
+          <p>{% include translate.html key="twoMean.numSelected" %}</p>
+          <p class="center-num" summary="chosen" summaryint>{% include translate.html key="twoMean.noData" %}</p>
+        </div>
+        <div>
+          <p>{% include translate.html key="twoMean.proportionSelcted" %}</p>
+          <p class="center-num" summary="proportion">{% include translate.html key="twoMean.noData" %}</p>
+        </div>
+      </div>
+    </div>
+    <div class="rhs">
+      <div class="chart-wrap"><canvas id="diff-chart"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<script src="{{base}}../lib/Chart.bundle.min.js"></script>
+{% if jekyll.environment == 'development' %}
+<script src="./twoMeanEntry.js" type="module"></script>
+{% else %}
+<script src="./twoMean.bundle.js"></script>
+{% endif %}
+

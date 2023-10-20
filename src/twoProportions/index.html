@@ -1,0 +1,156 @@
+---
+layout: default
+titlekey: twoProportions.title
+---
+
+<link rel="stylesheet" href="{{base}}./twoProportions.css">
+<div id="two-proportions">
+  <h1>{% include translate.html key="twoProportions.title" %}</h1>
+  <h2>1. {% include translate.html key="twoProportions.enterData" %}<input type="checkbox" style="float:right" checked/></h2>
+  <div id="input-section" class="section">
+    <div class="lhs">
+      <table>
+        <thead>
+          <tr>
+            <td></td>
+            <td class="desc">{% include translate.html key="twoProportions.groupA" %}</td>
+            <td class="desc">{% include translate.html key="twoProportions.groupB" %}</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="desc">{% include translate.html key="twoProportions.successes" %}</td>
+            <td><input type="number" id="a-success" value="0" min="0" step="1"></td>
+            <td><input type="number" id="b-success" value="0" min="0" step="1"></td>
+          </tr>
+          <tr>
+            <td class="desc">{% include translate.html key="twoProportions.failures" %}</td>
+            <td><input type="number" id="a-failure" value="0" min="0" step="1"></td>
+            <td><input type="number" id="b-failure" value="0" min="0" step="1"></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <button class="btn" onclick="twoProportions.loadData()">{% include translate.html key="twoProportions.loadData" %}</button>
+      <hr>
+      <div class="stats">
+        <div>
+          <p>{% include translate.html key="twoProportions.propGroupA" %} (p<sub>A</sub>):</p>
+          <p class="center-num" summary="proportionA">{% include translate.html key="twoProportions.noData" %}</p>
+        </div>
+        <div>
+          <p>{% include translate.html key="twoProportions.propGroupB" %} (p<sub>B</sub>):</p>
+          <p class="center-num" summary="proportionB">{% include translate.html key="twoProportions.noData" %}</p>
+        </div>
+        <div>
+          <p>{% include translate.html key="twoProportions.diffOfProp" %} (p<sub>A</sub> - p<sub>B</sub>):</p>
+          <p class="center-num" summary="proportionDiff">{% include translate.html key="twoProportions.noData" %}</p>
+        </div>
+      </div>
+    </div>
+    <div class="rhs">
+      <div class="chart-wrap"><canvas id="input-bars"></canvas></div>
+    </div>
+  </div>
+  <hr>
+
+  <h2>2. {% include translate.html key="twoProportions.runSims" %}<input type="checkbox" style="float:right" checked></h2>
+  <div class="section">
+    <div class="lhs">
+      <label>{% include translate.html key="twoProportions.noOfSims" %}:
+        <input id="num-simulations" type="number" min="1" value="1" max="1000" disabled="need-data"/>
+      </label>
+      <button class="btn" disabled="need-data" onclick="twoProportions.runSimulations()">{% include translate.html key="twoProportions.runSims" %}</button>
+      <br>
+      <div class="stats">
+        <div>
+          <p>{% include translate.html key="twoProportions.propOfRandomA" %} (p<sub>A</sub>):</p>
+          <p class="center-num" summary="sampleProportionA">{% include translate.html key="twoProportions.noData" %}</p>
+        </div>
+        <div>
+          <p>{% include translate.html key="twoProportions.propOfRandomB" %} (p<sub>B</sub>):</p>
+          <p class="center-num" summary="sampleProportionB">{% include translate.html key="twoProportions.noData" %}</p>
+        </div>
+        <div>
+          <p>{% include translate.html key="twoProportions.diffOfProp" %}(p<sub>A</sub> - p<sub>B</sub>):</p>
+          <p class="center-num" summary="sampleProportionDiff">{% include translate.html key="twoProportions.noData" %}</p>
+        </div>
+      </div>
+    </div>
+    <div class="rhs">
+      <h3 style="margin-left: 3em">{% include translate.html key="twoProportions.mostRecentDraw" %}</h3>
+      <div class="chart-wrap"><canvas id="last-sim-bars"></canvas></div>
+      
+      <!--table style="margin-left: 3em">
+        <tr>
+          <td style="text-align: right"><span summary="sampleAFailure" summaryint></span> {% include translate.html key="twoProportions.failures" %}</td>
+          <td rowspan="2" colspan="2">
+            
+          </td>
+          <td><span summary="sampleBFailure" summaryint></span> {% include translate.html key="twoProportions.failures" %}</td>
+        </tr>
+        <tr>
+          <td style="text-align: right"><span summary="sampleASuccess" summaryint></span> {% include translate.html key="twoProportions.successes" %}</td>
+          <td><span summary="sampleBSuccess" summaryint></span> {% include translate.html key="twoProportions.successes" %}</td>
+        </tr>
+      </table-->
+    </div>
+  </div>
+  <hr>
+
+  <h2>3. {% include translate.html key="twoProportions.subTitle3" %}</h2>
+  <input type="checkbox" style="float:right" checked/>
+  <div class="section">
+    <div class="lhs">
+      <h4>{% include translate.html key="twoProportions.descripInterval" %}</h4>
+      <label for="min-tailValue">{% include translate.html key="twoProportions.setMin" %} </label>
+      <input type="number" id="min-tailValue" disabled="need-results">
+      <label for="min-tailValue">{% include translate.html key="twoProportions.includeMin" %}<input type="checkbox" id="includeMin" disabled="need-results"></label>
+      <br>
+
+      <label for="max-tailValue">{% include translate.html key="twoProportions.setMax" %} </label>
+      <input type="number" id="max-tailValue" disabled="need-results">
+      <label for="min-tailValue">{% include translate.html key="twoProportions.includeMax" %}<input type="checkbox" id="includeMax" disabled="need-results"></label>
+      <br>
+      <hr>
+      <div class="stats">
+        <div>
+          <p>{% include translate.html key="twoProportions.oriDatasetDiff" %}</p>
+          <p id="diff-of-data" class="center-num" summary="proportionDiff">{% include translate.html key="twoProportions.noData" %}</p>
+        </div>
+        <div>
+          <p>{% include translate.html key="twoProportions.meanOfSampleDiff" %}</p>
+          <p id="mean-sample-diffs" class="center-num" summary="mean">{% include translate.html key="twoProportions.noData" %}</p>
+        </div>
+        <div>
+          <p>{% include translate.html key="twoProportions.std" %}</p>
+          <p id="stddev-sample-diffs" class="center-num" summary="stddev">{% include translate.html key="twoProportions.noData" %}</p>
+        </div>
+        <hr>
+        <div>
+          <p>{% include translate.html key="twoProportions.totalSamples" %}</p>
+          <p id="total-samples" class="center-num" summary="total" summaryint>{% include translate.html key="twoProportions.noData" %}</p>
+        </div>
+        <div>
+          <p>{% include translate.html key="twoProportions.noOfSelected" %}</p>
+          <p id="chosen-count" class="center-num" summary="chosen" summaryint>{% include translate.html key="twoProportions.noData" %}</p>
+        </div>
+        <div>
+          <p>{% include translate.html key="twoProportions.propSamplesSelected" %}</p>
+          <p id="proportion" class="center-num" summary="proportion">{% include translate.html key="twoProportions.noData" %}</p>
+        </div>
+      </div>
+    </div>
+    <div class="rhs">
+      <div class="chart-wrap"><canvas id="tail-chart"></canvas></div>
+    </div>
+  </div>
+</div>
+
+<script src="{{base}}../lib/Chart.bundle.min.js"></script>
+{% if jekyll.environment == 'development' %}
+<script src="./twoProportionsEntry.js" type="module"></script>
+{% else %}
+<script src="./twoProportions.bundle.js"></script>
+{% endif %}
+

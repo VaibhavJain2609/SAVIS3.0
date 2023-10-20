@@ -1,0 +1,328 @@
+Statistical Analysis Visualizations for Introductory Statistics$$Statistical Analysis Visualizations for Introductory Statistics$$site.title
+Home$$Inicio$$home.title
+Graphs$$Gráficas$$home.title-col1
+Significance test$$Pruebas de significancia$$home.title-col2
+Confidence Interval$$Intervalos de confianza$$home.title-col3
+About$$Acerca de SAVIS$$about.title
+Download$$Descargar$$download.title
+User Manual$$Manual de usuario$$userManual.title
+About$$Acerca de SAVIS$$about.title
+Contact$$Contacto$$about.contact
+Contributors$$Contribuidores$$about.contributors
+Back$$Retroceder$$home.backBtn
+Statistical Analysis Visualizations for Introductory Statistics (SAVIS) was conceived as part of a collaborative research project on statistical education between the Department of Mathematics and Statistics at California State University Sacramento (CSUS) and the School of Mathematics of the Universidad Autónoma de Yucatán (UADY). SAVIS is an educational tool to help to intuitively understand concepts of tests of statistical hypotheses and confidence intervals using visualizations based on resampling and randomization techniques. SAVIS has an online and a stand-alone version (both freely available) in English and Spanish.$$Las visualizaciones de análisis estadístico para estadísticas introductorias (SAVIS) se concibieron como parte de un proyecto de investigación colaborativa sobre educación estadística entre el Departamento de Matemáticas y Estadísticas de la Universidad Estatal de California en Sacramento (CSUS) y la Facultad de Matemáticas de la Universidad Autónoma de Yucatán (UADY) . SAVIS es una herramienta educativa para ayudar a comprender intuitivamente conceptos de pruebas de significancia estadísticas e intervalos de confianza mediante visualizaciones basadas en técnicas de muestreo y aleatorización. SAVIS tiene una versión en línea y una versión independiente (ambas disponibles gratuitamente) en inglés y español.$$about.content1
+SAVIS was created in the Spring of 2019  and extended in the Spring of 2020 by the following graduating seniors from the Department of Computer Science at CSUS under the direction of Rafael E. Diaz Escamilla, a professor in the Department of Mathematics and Statistics at CSUS:$$SAVIS fue creado en la primavera de 2019 y extendido en la primavera de 2020 por los siguientes graduados del Departamento de Informática de CSUS bajo la dirección de Rafael E. Díaz Escamilla, profesor del Departamento de Matemáticas y Estadística de CSUS:$$about.content2
+Bar chart$$Diagrama de barras$$barChartTuto.title
+Please enter data or drop columns from CVS file here (no column titles - see example data in drop down menu)$$Por favor, inroduzca datos aquí o arrastre archivo CSV (sin títulos de columna - ver ejemplo de datos en el menu de arriba)$$barChartTuto.textAreaPlaceHolder
+Size$$Tamaño$$barChartTuto.dataSize
+Categories$$Categorías$$barChartTuto.xAxisTitle
+Proportions$$Proporciones$$barChartTuto.yAxisTitle
+Frequency table$$Tabla de frecuencias$$barChartTuto.displayCategoryTitle
+Idx$$Idx$$barChartTuto.idx
+Category$$Categoría$$barChartTuto.category
+Absolute frequency$$Frecuencia absoluta$$barChartTuto.absFreq
+Relative frequency$$Frecuencia relativa$$barChartTuto.relFreq
+Load data$$Cargar Datos$$barChartTuto.loadData
+Reset$$Reiniciar$$barChartTuto.reset
+Upload data file$$Subir archivo de datos$$barChartTuto.upload
+Input data$$Ingrese los datos$$barChartTuto.inputDataTitle
+Select example Data$$Seleccione datos de ejemplo$$barChartTuto.selectData
+Example data 1$$Ejemplo de datos 1$$barChartTuto.selectOpt1
+Example data 2$$Ejemplo de datos 2$$barChartTuto.selectOpt2
+NaN$$NaN$$barChartTuto.noData
+Only 16 categories are supported$$Solo se admiten 16 categorías$$barChartTuto.errOverflow
+Input data$$Datos ingresados$$barChartTuto.inputDataLabel
+Draw samples$$Obtener muestras$$barChartTuto.sampleDataTitle
+Sample size$$Tamaño de muestra$$barChartTuto.sampleSize
+Run simulation$$Realizar simulación$$barChartTuto.drawSample
+Sample drawn$$Muestra obtenida$$barChartTuto.sampleDataLabel
+Dot plot$$Diagrama de puntos$$dotChartTuto.title
+Enter data$$Ingrese los datos$$dotChartTuto.enterData
+Select example Data$$Seleccione datos de ejemplo$$dotChartTuto.selectData
+Please enter data or drop columns from CVS file here (no column titles - see example data in drop down menu)$$Por favor, inroduzca datos aquí o arrastre archivo CSV (sin títulos de columna - ver ejemplo de datos en el menu de arriba)$$dotChartTuto.textAreaPlaceHolder
+Example data 1$$Ejemplo de datos 1$$dotChartTuto.selectOpt1
+Example data 2$$Ejemplo de datos 2$$dotChartTuto.selectOpt2
+Please enter data or drop columns from cvs file here (no column titles - see example data in drop down menu)$$Ingrese los datos aquí o arrastre archivo csv (sin títulos de columna - ver ejemplo de datos en el menu de arriba)$$dotChartTuto.textAreaPlaceHolder
+Load data$$Cargar datos$$dotChartTuto.loadData
+Reset$$Reiniciar$$dotChartTuto.reset
+Upload data file$$Subir archivo de datos$$dotChartTuto.upload
+Population$$Población$$dotChartTuto.populationData
+Sample$$Muestra$$dotChartTuto.sampleData
+ID$$ID$$dotChartTuto.id
+Value$$Dato$$dotChartTuto.value
+NaN$$NaN$$dotChartTuto.noData
+Mean$$Media$$dotChartTuto.mean
+Standard deviation$$Desviación estándar$$dotChartTuto.std
+Size$$Tamaño$$dotChartTuto.size
+Input data$$Datos ingresados$$dotChartTuto.inputDataLabel
+Data$$Datos$$dotChartTuto.xAxisTitle1
+Sample means$$Medias muestrales$$dotChartTuto.xAxisTitle2
+Frequencies$$Frecuencias$$dotChartTuto.yAxisTitle
+Last sample drawn$$Última muestra obtenida$$dotChartTuto.sampleDataLabel
+Get sample$$Obtener muestra$$dotChartTuto.drawSample
+Sample size$$Tamaño de muestra$$dotChartTuto.sampleSize
+Number of simulations$$Número de simulaciones$$dotChartTuto.noOfSims
+Run Simulation$$Realizar simulación$$dotChartTuto.runSim
+Distribution of sample means$$Distribución de medias muestrales$$dotChartTuto.chartTitle4
+Means to include in the interval$$Medias a incluir dentro del intervalo$$dotChartTuto.descripInterval
+Min$$Mínimo$$dotChartTuto.setMin
+Include Min?$$¿Incluir mínimo?$$dotChartTuto.includeMin
+Max$$Máximo$$dotChartTuto.setMax
+Include Max?$$¿Incluir máximo?$$dotChartTuto.includeMax
+Proportion of samples chosen$$Proporción de muestras elegidas$$dotChartTuto.proportionChosen
+Proportion of samples unchosen$$Proporción de muestras no elegidas$$dotChartTuto.proportionUnchosen
+Mean of sample means:$$Media de las medias muestrales:$$dotChartTuto.meanOfsamplesMeans
+Standard deviation of sample means:$$Desviación estándar de las medias muestrales:$$dotChartTuto.stdError
+Total samples:$$Total de muestras:$$dotChartTuto.totalSamples
+Means in interval$$Medias dentro del intervalo$$dotChartTuto.sampleMeansLabel1
+Means not in interval$$Medias fuera del intervalo$$dotChartTuto.sampleMeansLabel2
+One Proportion Significance test$$Prueba de significancia en una distribución binomial$$oneProportion.title
+Number of essays$$Número de ensayos$$oneProportion.tosses1
+success$$éxitos$$oneProportion.heads
+Min number of success:$$Número mínimo de éxitos:$$oneProportion.minHead
+Max number of success:$$Número máximo de éxitos:$$oneProportion.maxHead
+Number of repetitions in interval:$$Número de repeticiones en el intervalo:$$oneProportion.samplesInterval
+Proportion:$$Proporción:$$oneProportion.proportion
+Frequencies$$Frecuencia$$oneProportion.noOfSamples
+Number of success in$$Número de éxitos en$$oneProportion.noOfHeads
+essays$$ensayos$$oneProportion.tosses2
+Samples$$Muestras$$oneProportion.Samples
+Binomial Prediction$$Predicción Binomial$$oneProportion.binomial
+Selected$$Seleccionadas$$oneProportion.selected
+Remarks:$$Notas:$$oneProportion.remarkTitle
+1. Double click the graph to zoom in/out if the number of essays >= 50.$$1. Haga dos clics en la gráfica para agrandarla o disminuirla si el número de ensayos es >= 50.$$oneProportion.remark1
+2. Click the legend to hide/show corresponding info in graph.$$2. Haga un clic en las leyendas para mostrar/esconder información correspondiente.$$oneProportion.remark2
+Reset$$Reiniciar$$oneProportion.reset
+Get repetitions$$Realizar repeticiones$$oneProportion.getReps
+Total repetitions:$$Total de repeticiones:$$oneProportion.totalSamples
+Mean number of success:$$Media del número de éxitos:$$oneProportion.meanNoOfHeads
+Standard deviation of the number of success$$Desviación estándar del número de éxitos$$oneProportion.standardDeviation
+Probability of success$$Probabilidad de éxito$$oneProportion.probHeads
+Add number of repetitions$$Agregar número de repeticiones$$oneProportion.addReps
+Select interval for number of success in$$Determine un intervalo para el número de éxitos en$$oneProportion.selectInterval
+One Mean Significance test$$Prueba de significancia de una media $$oneMean.title
+Warning$$Advertencia$$oneMean.warning
+Imput Data:$$Ingrese los datos$$oneMean.enterData
+Select example data$$Seleccione datos de ejemplo$$oneMean.selectData
+Example data 1$$Ejemplo de datos 1$$oneMean.selectOpt1
+Example data 2$$Ejemplo de datos 2$$oneMean.selectOpt2
+Sample XXX$$Muestra XXX$$oneMean.sample
+Please enter data or drop columns from cvs file here (no column titles - see example data in drop down menu)$$Ingrese los datos aquí o arrastre archivo csv (sin títulos de columna - ver ejemplo de datos en el menu de arriba)$$oneMean.textAreaPlaceHolder
+Load Data$$Cargar Datos$$oneMean.loadData
+Reset$$Reiniciar$$oneMean.reset
+Population$$Población$$oneMean.populationData
+Sample$$Muestra$$oneMean.sampleData
+ID$$ID$$oneMean.id
+Value$$Dato$$oneMean.value
+Mean$$Media$$oneMean.mean
+Data$$Datos$$oneMean.xAxisTitle1
+Sample means$$Medias muestrales$$oneMean.xAxisTitle2
+Frequencies$$Frecuencias$$oneMean.yAxisTitle
+Sample Number$$Número de muestra$$oneMean.AxisIntervals
+95% confidence interval$$Intervalo de confianza 95%$$oneMean.AxisMeans
+Generate hypothetical population$$Generar población hipotética$$oneMean.chartTitle2
+Shift mean$$Desplazar media$$oneMean.shiftMean
+Increase data$$Incremente la muestra$$oneMean.increaseData
+times$$veces$$oneMean.times
+Simulations$$Simulaciones$$oneMean.simSection
+Sample size:$$Tamaño de la muestra$$oneMean.sampleSize
+Number of simulations$$Número de simulaciones$$oneMean.numOfSim
+Run simulation$$Correr simulación$$oneMean.runSim
+Distribution of sample means$$Distribución de medias muestrales$$oneMean.chartTitle4
+Type of Test$$Tipo de Prueba$$oneMean.pleaseSelect
+One Tail Right$$Una cola (derecha)$$oneMean.oneTailRight
+One Tail Left$$Una cola (izquierda)$$oneMean.oneTailLeft
+Two Tails$$Dos colas$$oneMean.twoTail
+Total samples:$$Total de muestras:$$oneMean.totalNoOfSamples
+Sample means at least as extreme as$$Medias iguales a o más extremas que$$oneMean.extremeSamples
+samples$$muestras$$oneMean.samples
+Samples$$Muestras$$oneMean.Samples
+Proportion:$$Proporción:$$oneMean.proportion
+sample means$$medias muestrales$$oneMean.sampleMeans
+Mean of sample means:$$Media de las medias muestrales:$$oneMean.meanOfsamplesMeans
+Original dataset$$Datos originales$$oneMean.original
+Hypothetical population$$Poblacíon hipotética$$oneMean.hypotheticalPopulation
+Last sample drawn$$Última muestra obtenida$$oneMean.mostRecentDraw
+NaN$$NaN$$oneMean.noData
+Total samples:$$Total de muestras:$$oneMean.totalSamples
+No population data$$Sin datos de población$$oneMean.errorNoPopulation
+Standard deviation$$Desviación estándar$$oneMean.std
+Standard deviation of samples means:$$Desviación estándar de las medias muestrales:$$oneMean.stdOfMeans
+Sample exceeds population$$La muestra excede la población$$oneMean.errorNotEnoughElements
+Select extreme values for interval of sample means$$Establecer valores extremos para el intervalo de medias muestrales$$oneMean.descripInterval
+Min$$Mínimo$$oneMean.setMin
+Include Min?$$¿Incluir mínimo?$$oneMean.includeMin
+Max$$Máximo$$oneMean.setMax
+Include Max?$$¿Incluir Máximo?$$oneMean.includeMax
+Proportion of means in interval$$Proporción de medias dentro del intervalo$$oneMean.proportionChosen
+Proportion of means not in interval$$Proporción de medias fuera del intervalo$$oneMean.proportionUnchosen
+
+95% Confidence intervals$$Intervalos de confianza del 95% $$oneMean.cI95Chart
+Build intervals$$Construir intervalos$$oneMean.buildCI
+Population Mean$$Media poblacional$$oneMean.populationMean
+Input number of intervals (only first one hundred intervals will be graphed)$$Ingrese el número de intervalos (pero solo los primeros 100 intervalos se graficarán)$$oneMean.noOfCoverages
+Number of intervals containing the population mean$$Número de intervalos que contienen a la media poblacional$$oneMean.samplesWithMean
+Number of intervals not containing the population mean$$Número de intervalos que no contienen a la media poblacional$$oneMean.samplesWithoutMean
+Number of intervals containing the population mean$$Número de intervalos que contienen a la media poblacional$$oneMean.intervalsWithMean
+Number of intervals not containing the population mean$$Número de intervalos que no contienen a la media poblacional$$oneMean.intervalsWithoutMean
+Total of coverages$$Total de coberturas$$oneMean.totalCoverages
+Only 100 coverage intervals are supported$$Solo se admiten 100 intervalos de coberturas$$oneMean.coverageOverflow
+Coverage values$$Valores de cobertura$$oneMean.displaySMTitle
+Lower$$Inferior$$oneMean.lowerLimit
+Upper$$Superior$$oneMean.upperLimit
+
+Two Means Significance test$$Prueba de significancia de dos medias$$twoMean.title
+Enter Data$$Ingrese los Datos$$twoMean.enterData
+Enter or Drop CSV with first column as group number (1 or 2) and second column as variable. No colunm names (see example data in drop down menu)$$Ingrese los datos o arrastre aquí archivo csv: primera columa para codigo de grupos (1 o 2), segunda colunmna para la variable (sin títulos de columna - ver ejemplo de datos en el menu de arriba)$$twoMean.placeholder
+Load Data$$Subir Datos$$twoMean.loadData
+Reset$$Reiniciar$$twoMean.reset
+Mean 1 (Group 1):$$Media 1 (Grupo 1):$$twoMean.gp1Mean
+Mean 2 (Group 2):$$Media 2 (Grupo 2):$$twoMean.gp2Mean
+Standard Deviation (Group 1):$$Desviación Estándar (Grupo 1):$$twoMean.gp1SD
+Standard Deviation (Group 2):$$Desviación Estándar (Grupo 2):$$twoMean.gp2SD
+Data$$Datos$$twoMean.xAxisTitle1
+Samples$$Muestras$$twoMean.xAxisTitle2
+Differences of Means$$Diferencias entre proporciones$$twoMean.xAxisTitle3
+Frequencies$$Frecuencias$$twoMean.yAxisTitle
+Simulations$$Simulaciones$$twoMean.runSims
+Mean of Randomized Sample to Group 1:$$Media de los datos aleatorizados al Grupo 1:$$twoMean.randomMean1
+Mean of Randomized Sample to Group 2:$$Media de los datos aleatorizados al Grupo 2:$$twoMean.randomMean2
+Standard Deviation of Randomized Sample to Group 1:$$Desviación Estándar de las muestras aleatorizadas al Grupo 1:$$twoMean.randomSD1
+Standard Deviation of Randomized Sample to Group 2:$$Desviación Estándar de la las muestras aleatorizadasl Grupo 2:$$twoMean.randomSD2
+Values in Interval$$Valores en el intervalo$$twoMean.InInterval
+Values not in Interval$$Valores no en intervalo$$twoMean.NotInInterval
+Lower Bound:$$Límite inferior$$twoMean.lower
+Upper Bound:$$Límite superior$$twoMean.upper
+Select Sample Data$$Seleccione Datos Muestra$$twoMean.selectData
+Example data 1$$Ejemplo de datos 1$$twoMean.selectOpt1
+Example data 2$$Ejemplo de datos 2$$twoMean.selectOpt2
+Load Data$$Cargar Datos$$twoMean.loadData
+NaN$$NaN$$twoMean.noData
+Difference of Means (Mean 1 - Mean 2):$$Diferencia entre Medias (Media 1 - Media 2):$$twoMean.diffOfMean
+Run Simulation$$Correr Simulación$$twoMean.runSim
+Number of Simulations$$Número de Simulaciones$$twoMean.numSim
+Difference of Means (Randomized Samples):$$Diferencia entre medias (de muestras aleatorizadas):$$twoMean.diffOfSampleMean
+Sampling Distribution of Difference of Means$$Distribución de diferencias de medias$$twoMean.subTitle3
+Type of Test$$Tipo de Prueba$$tailChart.pleaseSelect
+One Tail Right$$Una cola (derecha)$$tailChart.oneTailRight
+One Tail Left$$Una cola (izquierda)$$tailChart.oneTailLeft
+Two Tails$$Dos colas$$tailChart.twoTail
+NaN$$NaN$$twoMean.noData
+Group 1$$Grupo 1$$twoMean.group1
+Group 2$$Grupo 2$$twoMean.group2
+Differences$$Diferencias$$twoMean.differences
+Select differences at least as extreme as$$Seleccionar las diferencias iguales a o más extremas que:$$twoMean.selectAllExtreme
+Samples$$Muestras$$twoMean.Samples
+Total samples:$$Total de muestras:$$twoMean.totalSamples
+Number of Extreme Differences:$$Número de Diferencias Extremas:$$twoMean.numSelected
+Original Dataset Difference of Means:$$Diferencia de Medias en Datos Originales:$$twoMean.oriDiffOfMean
+Mean of Sample Differences:$$Media de las Diferencias:$$twoMean.meanSampleDiff
+Standard Deviation:$$Desviación Estándar:$$twoMean.stdSampleDiff
+Proportion of Extreme Differences$$Proporción de Diferencias Extremas:$$twoMean.proportionSelcted
+Group 1 and Group 2 must both have at least one element.$$Grupo 1 y Grupo 2 tienen que tener ambos al menos un elemento.$$twoMean.alertAtLeastOne
+Two Proportions Significance test$$Prueba de significancia de dos proporciones$$twoProportions.title
+Input Data:$$Ingrese los Datos$$twoProportions.enterData
+Group A$$Grupo A$$twoProportions.groupA
+Group B$$Grupo B$$twoProportions.groupB
+Successes$$Exitos$$twoProportions.successes
+Failures$$Fracasos$$twoProportions.failures
+Percentage$$Porcentaje$$twoProportions.yAxisTitle1
+Frequencies$$Frecuencias$$twoProportions.yAxisTitle2
+Load data$$Cargar Datos$$twoProportions.loadData
+Simulations$$Simulaciones$$twoProportions.runSims
+Number of Simulations$$Número de simulaciones$$twoProportions.noOfSims
+Proportion of Succeses in Group A$$Proporción de Exitos en Grupo A$$twoProportions.propGroupA
+Proportion of Successes in Group B$$Proporción de Exitos en Grupo B$$twoProportions.propGroupB
+Difference of Proportions$$Diferencia de Proporciones$$twoProportions.diffOfProp
+Proportion of Successes Randomized to Group A$$Proporción de Exitos aleatorizados al Grupo A$$twoProportions.propOfRandomA
+Proportion of Successes Randomized to Group B$$Proporción de Exitos aleatorizados al Grupo B$$twoProportions.propOfRandomB
+Sampling Distribution of Difference of Proportions$$Distribución de las Diferencias de Proporciones$$twoProportions.subTitle3
+Select differences as extreme as:$$Selecionar las diferencias iguales a o más extremas que:$$twoProportions.selectAllExtreme
+Difference of Proportions in Original Data:$$Diferencia de Proporciones en Datos Originales:$$twoProportions.oriDatasetDiff
+Mean of Sample Differences:$$Media de las Diferencias de Proporciones:$$twoProportions.meanOfSampleDiff
+Standard deviation of samples differences:$$Desviación estándar de diferencias de muestra:$$twoProportions.std
+Total samples:$$Total de muestras:$$twoProportions.totalSamples
+Number of Extreme Differences:$$Número de Diferencias Extremas:$$twoProportions.noOfSelected
+Proportion of extreme differences:$$Proporción de diferencias extremas$$twoProportions.propSamplesSelected
+N/A$$N/A$$twoProportions.noSim
+Select differences as extreme as:$$Seleccionar las diferencias iguales a o más extremas que:$$twoProportions.selectAllExtreme
+NaN$$NaN$$twoProportions.noData
+Differences$$Diferencias$$twoProportions.differences
+Group A and Group B must both have at least one element.$$Grupo A y Grupo B tienen que tener ambos al menos un elemento.$$twoProportions.alertAtLeastOne
+Differences$$Diferencias$$twoProportions.differences
+Select extreme values for interval of differences of proportions$$Establecer valores extremos para el intervalo de diferencias de proporciones$$twoProportions.descripInterval
+Min$$Mínimo$$twoProportions.setMin
+Include Min?$$¿Incluir mínimo?$$twoProportions.includeMin
+Max$$Máximo$$twoProportions.setMax
+Include Max?$$¿Incluir Máximo?$$twoProportions.includeMax
+Last sample drawn$$Ultima Muestra$$twoProportions.mostRecentDraw
+Last sample drawn$$Ultima re-aleatorización$$twoMean.mostRecentDraw
+Build$$Construir$$twoMean.build
+Build$$Construir$$oneMean.build
+Size n (Group 1):$$Tamaño n (Grupo 1):$$twoMean.size1
+Size n (Group 2):$$Tamaño n (Grupo 2):$$twoMean.size2
+Increase By (Group 1)$$Aumentar en (Grupo 1)$$twoMean.inc1
+Increase By (Group 2)$$Aumentar en (Grupo 2)$$twoMean.inc2
+Confidence Level$$Nivel de confianza$$oneMean.ci
+Confidence Level$$Nivel de confianza$$twoMean.ci
+Confidence Level$$Nivel de confianza$$twoProportions.ci
+Build$$Construir$$twoProportions.build
+Upload data file$$Subir archivo de datos$$oneMean.upload
+Upload data file$$Subir archivo de datos$$twoMean.upload
+Values in Interval$$Valores en intervalo$$twoProportions.InInterval
+Values not in Interval$$Valores no en intervalo$$twoProportions.NotInInterval
+Two Means Confidence Interval$$Intervalo de confianza de dos medias$$twoMean.cititle
+One Mean Confidence Interval$$Intervalo de confianza para una media$$oneMean.cititle
+Two Proportions Confidence Interval$$Intervalo de confianza de dos proporciones$$twoProportions.cititle
+Lower Bound:$$Límite inferior$$twoProportions.lower
+Upper Bound:$$Límite superior$$twoProportions.upper
+Lower bound:$$Límite inferior$$oneMean.lower
+Upper bound:$$Límite superior$$oneMean.upper
+Values in Interval$$Valores dentro del intervalo$$oneMean.InInterval
+Values not in Interval$$Valores fuera del intervalo$$oneMean.NotInInterval
+You must have at least one successes and failures$$Debe tener al menos uno éxitos y fracasos$$oneProportion.alertAtLeastOne
+Proportion of Successes$$Proporción de éxitos:$$oneProportion.proportion1
+Enter Data:$$Ingrese los Datos$$oneProportion.enterData
+Data$$Datos$$oneProportion.data
+Sample size:$$Tamaño de muestra:$$oneProportion.sampleSize
+Simulations$$Simulaciones$$oneProportion.runSims
+Lower Bound:$$Límite inferior$$oneProportion.lower
+Upper Bound:$$Límite superior$$oneProportion.upper
+Confidence Level$$Nivel de confianza$$oneProportion.ci
+Build$$Construir$$oneProportion.build
+One Proportion Confidence Interval$$Intervalo de confianza de una proporción$$oneProportion.cititle
+Number of simulations$$Número de simulaciones$$oneProportion.noOfSims
+Proportion of successes in the last simulation$$Proporción de éxitos en la última simulación$$oneProportion.propOfSims
+Last sample drawn$$Ultima Muestra$$oneProportion.mostRecentDraw
+NaN$$NaN$$oneProportion.noData
+Successes$$Éxitos$$oneProportion.successes
+Failures$$Fracasos$$oneProportion.failures
+Load Data$$Cargar Datos$$oneProportion.loadData
+Standard Deviation:$$Desviación Estándar:$$oneProportion.std
+Distribution of sample proportions$$Distribución de proporciones muestrales$$oneProportion.subTitle3
+Select extreme values for interval of sample proportions (top graph)$$Establecer valores extremos para el intervalo de proporciones muestrales (gráfica superior)$$oneProportion.descripInterval
+Select percentage of sample proportions around the mean of sample proportions (bottom graph)$$Seleccionar porcentaje de proporciones muestrales alrededor de la media de muestras proporcionales (gráfica inferior)$$oneProportion.setPercentage
+Percentage:$$Porcentaje:$$oneProportion.percentage
+Mean of sample proportions$$Media de proporciones muestrales$$oneProportion.meanOfSampleDiff
+Standard deviation of sample proportions$$Desviación estándar de proporciones muestrales$$oneProportion.stdOfSampleDiff
+Values in Interval$$Valores en intervalo$$oneProportion.InInterval
+Values not in Interval$$Valores no en intervalo$$oneProportion.NotInInterval
+Increase By$$Aumentado por$$oneProportion.inc
+Increase By$$Aumentado por$$twoProportions.inc
+
+Data$$Datos$$oneProportion.xAxisTitle1
+Sample proportions$$Proporciones muestrales$$oneProportion.xAxisTitle2
+Percentage$$Porcentaje$$oneProportion.yAxisTitle1
+Frequencies$$Frecuencias$$oneProportion.yAxisTitle2
+Size$$Tamaño$$oneMean.size
+Please increment the data for group$$Incremente los datos para el grupo$$twoMean.incrementWarning
+Increase by factor must be greater than zero$$El aumento por factor debe ser mayor que cero$$twoMean.incrementZeroWarning
+Increase by factor must be greater than zero$$El aumento por factor debe ser mayor que cero$$twoProportions.incrementZeroWarning
+Please increment the data for group$$Incremente los datos para el grupo$$twoProportions.incrementWarning
+Increase by factor must be greater than zero$$El aumento por factor debe ser mayor que cero$$oneProportion.incrementZeroWarning
+Please increment the data for group$$Incremente los datos para el grupo$$oneProportion.incrementWarning
+
+
+
+
+ 
