@@ -49,3 +49,12 @@ $ npm run package-win
 ### List of Collaborators (Team Waterfall)
  - Daniel Kuzmin
  - Muhammad Mazhar
+ ### List of Collaborators (Team Shaves)
+ - Vaibhav Jain
+ - Sri Charan Kondragunta
+ - Emad Sabir
+ - Hetvi Patel
+ - Hormoz Halimi
+ - Sarthak Bhalla
+ - Albin Shabhu
+ - Bikram Singh
